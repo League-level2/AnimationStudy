@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.geom.Line2D;
 import java.awt.geom.Rectangle2D;
 
 public class Main extends JComponent implements ActionListener, Runnable
@@ -14,7 +15,9 @@ public class Main extends JComponent implements ActionListener, Runnable
     private Timer paintTicker = new Timer(20, this); //Ticks every 20 milliseconds (50 times per second); calls on actionPerformed() when it ticks.
     private Timer animationTicker = new Timer(100, this);
     private int imageCounter = 0;
-    private int iconX = 1000;
+    private int iconX = widthOfScreen;
+    private Line2D.Double sidewalk1 = new Line2D.Double(0, 500, widthOfScreen, 500);
+    private Line2D.Double sidewalk2 = new Line2D.Double(0, 300, widthOfScreen, 300);
 
     public static void main(String[] args)
     {
@@ -40,7 +43,10 @@ public class Main extends JComponent implements ActionListener, Runnable
     {
         Graphics2D g2 = (Graphics2D)g;
         ImageIcon img1 = images[imageCounter];
+        g2.draw(sidewalk1);
+        g2.draw(sidewalk2);
         img1.paintIcon(this, g2, iconX, 0);
+
     }
 
     @Override
@@ -54,6 +60,10 @@ public class Main extends JComponent implements ActionListener, Runnable
         {
             imageCounter = (imageCounter + 1) % 8;
             iconX -= 20;
+            if (iconX < -200)
+            {
+                iconX = widthOfScreen;
+            }
             repaint();
         }
     }

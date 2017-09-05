@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="AnimationStudy:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/AnimationStudy_jar</output-path>
+    <root id="archive" name="AnimationStudy.jar">
+      <element id="module-output" name="AnimationStudy" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/pic0.PNG" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/pic1.PNG" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/pic2.PNG" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/pic3.PNG" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/pic4.PNG" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/pic5.PNG" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/pic6.PNG" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/pic7.PNG" />
+    </root>
+  </artifact>
+</component>
